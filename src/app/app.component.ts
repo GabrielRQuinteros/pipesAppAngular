@@ -8,4 +8,5 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
 
+  public title: string = 'pipesApp';
 }
