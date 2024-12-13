@@ -1,1 +1,31 @@
-<p>numbers-page works!</p>
+<p-panel header="Pipes Básicos" class="p-2" >
+  <p>Pipes numéricos incluidos en Angular - Usualmente en el CommonModule</p>
+</p-panel>
+
+<div class="grid " >
+
+  <div class="col-12 md:col-4" >
+    <p-card header="Ventas Netas" subheader="Pipe number" >
+      <!-- Con formato de numero, con 2 decimales y redondeado. -->
+      <!-- 1: Cantidad minima de Digitos ANTES de la coma, si el numero es .5, agrega el 0 pasándolo a "0.5" -->
+      <!-- 2: Mínimo de Números decimales, si el valor era 1, lo transforma en 1.00, -->
+      <!-- 3: Máximo de Números decimales, si el valor era 1.1238, el valor se muestra como 1.124, porque muestra 3 dígitos,
+           haciendo un redondeo en el ultimo dígito-->
+        {{ totalSells | number: '1.2-3'}}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4" >
+    <p-card header="Ventas Brutas" subheader="Pipe currency" >
+        {{ totalSells | currency: 'JPY' : 'symbol-narrow': '1.4-6' }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4" >
+    <p-card header="Ganancia Porcentual" subheader="Pipe percent" >
+        {{ percentage | percent: '1.2-2' }}
+    </p-card>
+  </div>
+
+
+</div>
